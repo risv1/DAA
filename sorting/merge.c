@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-void merge(int arr[], int p, int q, int r) {
+void merge(int arr[], int p, int q, int r)
+{
 
   int n1 = q - p + 1;
   int n2 = r - q;
@@ -17,33 +18,40 @@ void merge(int arr[], int p, int q, int r) {
   j = 0;
   k = p;
 
-
-  while (i < n1 && j < n2) {
-    if (L[i] <= M[j]) {
+  while (i < n1 && j < n2)
+  {
+    if (L[i] <= M[j])
+    {
       arr[k] = L[i];
       i++;
-    } else {
+    }
+    else
+    {
       arr[k] = M[j];
       j++;
     }
     k++;
   }
 
-  while (i < n1) {
+  while (i < n1)
+  {
     arr[k] = L[i];
     i++;
     k++;
   }
 
-  while (j < n2) {
+  while (j < n2)
+  {
     arr[k] = M[j];
     j++;
     k++;
   }
 }
 
-void mergeSort(int arr[], int l, int r) {
-  if (l < r) {
+void mergeSort(int arr[], int l, int r)
+{
+  if (l < r)
+  {
     int m = l + (r - l) / 2;
 
     mergeSort(arr, l, m);
@@ -52,22 +60,25 @@ void mergeSort(int arr[], int l, int r) {
   }
 }
 
-void printArray(int arr[], int size) {
+void printArray(int arr[], int size)
+{
   for (int i = 0; i < size; i++)
     printf("%d ", arr[i]);
   printf("\n");
 }
 
-int main() {
+int main()
+{
   int n;
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
+  printf("Enter the number of elements: ");
+  scanf("%d", &n);
 
-    int list[n];
-    printf("Enter the elements: ");
-    for(int i=0; i<n; i++){
-        scanf("%d", &list[i]);
-    }
+  int list[n];
+  printf("Enter the elements: ");
+  for (int i = 0; i < n; i++)
+  {
+    scanf("%d", &list[i]);
+  }
 
   mergeSort(list, 0, n - 1);
 
