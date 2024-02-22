@@ -11,10 +11,8 @@ int partition(int array[], int low, int high) {
   int i = (low - 1);
 
   for (int j = low; j < high; j++) {
-    if (array[j] <= pivot) {
-        
+    if (array[j] <= pivot) {        
       i++;
-
       switchElement(&array[i], &array[j]);
     }
   }
